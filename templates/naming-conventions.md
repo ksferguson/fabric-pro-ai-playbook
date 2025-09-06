@@ -3,46 +3,51 @@
 ## Before (Human-Focused) → After (AI-Ready)
 
 ### Basic Improvements
-- `id` → `customer_unique_identifier_from_crm`
-- `amt` → `order_total_amount_usd`
-- `qty` → `quantity_ordered_units`
-- `dt` → `order_date_timestamp`
-- `flag` → `is_premium_customer_boolean`
+- ID → Customer Identifier (from CRM)
+- Amt → Order Total Amount (USD)
+- Qty → Quantity Ordered (Units)
+- Dt → Order Date (Timestamp)
+- Flag → Premium Customer (Yes/No)
 
 ### Context-Rich Examples
-- `revenue` → `monthly_recurring_revenue_usd_excluding_discounts`
-- `status` → `order_status_completed_pending_cancelled`
-- `score` → `customer_satisfaction_score_1_to_10_scale`
-- `rate` → `conversion_rate_percentage_leads_to_customers`
+- Revenue → Monthly Recurring Revenue (USD, Excluding Discounts)
+- Status → Order Status (Completed / Pending / Cancelled)
+- Score → Customer Satisfaction Score (1–10 Scale)
+- Rate → Conversion Rate (% Leads to Customers)
 
 ### Relationship-Aware Naming
-- `customer_table` → `customers_master_records_from_salesforce_crm`
-- `orders` → `sales_orders_completed_transactions_excluding_returns`
-- `products` → `product_catalog_active_items_with_pricing`
+- Customer Table → Customers (Master Records from Salesforce CRM)
+- Orders → Sales Orders (Completed Transactions, Excluding Returns)
+- Products → Product Catalog (Active Items with Pricing)
+
+---
 
 ## Agent-Ready Model Template
 
 ### Tables
-- `customers_master_records_from_crm`
-- `sales_orders_completed_transactions`
-- `product_catalog_active_items`
-- `calendar_date_dimension_table`
+- Customers (Master Records from CRM)
+- Sales Orders (Completed Transactions)
+- Product Catalog (Active Items)
+- Calendar (Date Dimension with Business Periods)
 
 ### Key Measures
-- `total_revenue_current_month_usd`
-- `customer_acquisition_cost_marketing_attributed`
-- `average_order_value_excluding_returns_usd`
-- `customer_lifetime_value_predicted_36_months`
+- Total Revenue (USD, Current Month)
+- Customer Acquisition Cost (USD, Marketing-Attributed)
+- Average Order Value (USD, Excluding Returns)
+- Customer Lifetime Value (Predicted, 36 Months)
 
 ### Relationships
-- All relationships named with business context
-- Bridge tables clearly identified
-- Many-to-many relationships documented
+- All relationships named with business context  
+- Bridge tables clearly identified  
+- Many-to-many relationships documented  
+
+---
 
 ## Naming Principles
+- **Use Full Words:** Avoid abbreviations that AI or business users might misinterpret  
+- **Include Context:** Add data source, time period, or business rules in parentheses  
+- **Specify Units:** Always indicate currency, measurements, or scales  
+- **Be Descriptive:** Purpose and scope should be clear and business-readable  
+- **Consider Relationships:** Reflect how tables connect in business terms  
 
-1. **Use Full Words:** No abbreviations that AI might misinterpret
-2. **Include Context:** Data source, time period, business rules
-3. **Specify Units:** Currency, measurements, scales
-4. **Be Descriptive:** Purpose and scope should be clear
-5. **Consider Relationships:** How tables connect in business terms
+**Career Insight:** Clear, AI-ready names are not cosmetic — they are the foundation of trust in Copilot and conversational analytics.
