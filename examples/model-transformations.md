@@ -1,71 +1,110 @@
-# Before/After Model Transformations
+# AI-Ready Model Transformations Playbook
 
-## Sales Analysis Model - Before
+## Naming Conventions Guide
+To ensure data models are business-friendly and AI-readable, apply these rules consistently:
 
-**Tables:** 
-- `customers`
-- `orders` 
-- `products`
-- `dates`
+1. **Title Case with Spaces** – avoid snake_case or camelCase  
+   *Good:* `Total Revenue (USD)`  
+   *Avoid:* `total_revenue_usd`
 
-**Key Measures:**
-- `revenue`
-- `avg_order`
-- `customer_count`
+2. **Units in Parentheses** – always include currency, percentages, or timeframes  
+   *Example:* `Average Order Value (USD)`
 
-**Relationships:** 
-- Basic foreign key relationships
+3. **Inclusions/Exclusions in Parentheses** – capture business logic clearly  
+   *Example:* `Monthly Recurring Revenue (USD, Excluding Discounts & Returns)`
 
-**Documentation:** 
+4. **Short, Descriptive, Unambiguous Names** – optimize for business readability and AI clarity  
+   *Example:* `Active Customers (Purchased within 90 Days)`
+
+5. **Consistency Across Models** – apply the same structure everywhere so Copilot learns your vocabulary.
+
+---
+
+## Sales Analysis Example
+
+### Before: Traditional Semantic Model
+**Tables**
+- Customers
+- Orders
+- Products
+- Dates
+
+**Measures**
+- Revenue
+- Avg Order
+- Customer Count
+
+**Relationships**
+- Basic foreign key joins
+
+**Documentation**
 - Minimal, technical focus
 
-## Sales Analysis Model - After
-
-**Tables:**
-- `customers_master_records_from_salesforce_crm`
-- `sales_orders_completed_transactions_excluding_returns`  
-- `product_catalog_active_items_with_current_pricing`
-- `calendar_date_dimension_with_business_periods`
-
-**Key Measures:**
-- `monthly_recurring_revenue_usd_excluding_discounts_and_returns`
-- `average_order_value_completed_transactions_usd`
-- `active_customers_purchased_within_90_days`
-- `customer_acquisition_cost_marketing_attributed_usd`
-
-**Relationships:** 
-- Named and documented business relationships
-
-**Documentation:** 
-- Rich business context, usage scenarios, update schedules
-
-## Agent Query Results Comparison
-
-### Query: "What's our revenue growth this quarter?"
-
-**Before Model Response:**
+**Agent Query:** *"What's our revenue growth this quarter?"*  
+**Response:**  
 ```
 "I found revenue data but I'm not sure which revenue measure to use or what time period constitutes 'this quarter' in your business context."
 ```
 
-**After Model Response:**
+---
+
+### After: AI-Ready Semantic Model
+**Tables**
+- Customers (Master Records from Salesforce CRM)  
+- Sales Orders (Completed, Excluding Returns)  
+- Product Catalog (Active Items with Current Pricing)  
+- Calendar (Business Periods)
+
+**Measures**
+- Monthly Recurring Revenue (USD, Excluding Discounts & Returns)  
+- Average Order Value (USD, Completed Transactions)  
+- Active Customers (Purchased within 90 Days)  
+- Customer Acquisition Cost (USD, Marketing-Attributed)
+
+**Relationships**
+- Named, documented, and business-friendly
+
+**Documentation**
+- Rich business context, usage scenarios, update schedules
+
+**Agent Query:** *"What's our revenue growth this quarter?"*  
+**Response:**  
 ```
-"Monthly recurring revenue for Q4 2025 is $2.3M, representing 15% growth compared to Q3 2025 ($2.0M) and 23% growth year-over-year (Q4 2024: $1.87M). This growth is driven primarily by new customer acquisitions in the Enterprise segment."
+"Monthly Recurring Revenue for Q4 2025 is $2.3M, representing 15% growth compared to Q3 2025 ($2.0M) and 23% growth year-over-year (Q4 2024: $1.87M). Growth is driven primarily by new customer acquisitions in the Enterprise segment."
 ```
 
-## E-commerce Model Transformation
+---
 
-### Before: Generic E-commerce Model
-- Tables: `users`, `orders`, `products`, `sessions`
-- Measures: `sales`, `visitors`, `conversion`
+## Key Design Principles
+- **Descriptive Names:** short, business-friendly, unambiguous  
+- **Business Context:** include exclusions/inclusions in parentheses  
+- **Consistency:** apply the same conventions across all models  
+- **Rich Metadata:** descriptions, synonyms, update schedules  
+- **Verified Answers:** lock in consistent results for common queries  
 
-### After: AI-Ready E-commerce Model
-- Tables: 
-  - `website_users_registered_with_purchase_history`
-  - `ecommerce_orders_completed_with_shipping_details`
-  - `product_inventory_active_with_pricing_tiers`
-  - `web_sessions_tracked_with_attribution_data`
-- Measures:
-  - `total_online_sales_completed_orders_usd`
-  - `unique_website_visitors_excluding_bots`
-  - `ecommerce_conversion_rate_sessions_to_orders_percentage`
+**Career Insight:** Designing AI-ready data models is your new core skill — you are becoming a **Data–AI Translator**.
+
+---
+
+## E-commerce Example
+
+### Before: Generic Model
+**Tables**
+- Users, Orders, Products, Sessions
+
+**Measures**
+- Sales, Visitors, Conversion
+
+---
+
+### After: AI-Ready Model
+**Tables**
+- Website Users (Registered with Purchase History)  
+- E-commerce Orders (Completed with Shipping Details)  
+- Product Inventory (Active with Pricing Tiers)  
+- Web Sessions (Tracked with Attribution Data)
+
+**Measures**
+- Total Online Sales (USD, Completed Orders)  
+- Unique Website Visitors (Excluding Bots)  
+- E-commerce Conversion Rate (% Sessions to Orders)
